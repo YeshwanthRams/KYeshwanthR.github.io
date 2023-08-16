@@ -1,0 +1,263 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+.logo img{
+  width: 50px;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+}
+
+.nav ul li {
+  margin: 10px;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.banner {
+  height: 300px;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.banner h1 {
+  color: black;
+  font-size: 40px;
+}
+
+.banner p {
+  color: black;
+  font-size: 20px;
+}
+
+.banner button {
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #333;
+  color: white;
+  font-size: 16px;
+}
+
+.categories {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.category {
+  width: 300px;
+  height: 200px;
+}
+
+.category img {
+  width: 100%;
+  height: 100%;
+}
+
+.category h3 {
+  text-align: center;
+}
+
+.featured {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.product {
+  width: 300px;
+  position: relative;
+}
+
+.product img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product h3 {
+  text-align: center;
+}
+
+.product p {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.product button {
+  display: block;
+  /* margin-top: 35px; */
+  margin-left: 35px;
+  bottom: 20px;
+  position: absolute;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #333;
+  color: white;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Add transition properties */
+}
+
+/* Style for the "Add to Cart" button on hover */
+.product button:hover {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+  /* border-color: #007bff; */
+}
+
+
+footer {
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+footer p {
+  text-align: center;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: white;
+  border: 2px solid black;
+  border-right: none;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
+
+.sidebar .cart-items {
+  /* ... (existing styles) */
+  max-height: calc(100% - 100px); /* Adjust the height to make room for the total-cost div */
+  overflow-y: auto; /* Add a scrollbar if needed */
+}
+
+.sidebar .total-cost {
+  position: sticky; /* Set the position to sticky */
+  bottom: 0;
+  border-top: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.sidebar.open {
+  width: 250px;
+}
+
+.sidebar h2 {
+  text-align: center;
+  font-family: Arial;
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+}
+
+.sidebar .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+.sidebar .item p {
+  text-align: center;
+  margin: 0;
+  flex: 1;
+}
+
+.sidebar .item button {
+  color: red;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.closebtn {
+  position: absolute;
+  border: none;
+  background-color: transparent;
+  top: 0;
+  left: 5px;
+  font-size: 36px;
+}
+
+.item span {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 5px;
+  border: 1px solid black;
+}
+
+.total {
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.total p {
+  font-size: 20px;
+}
+
+#checkout-btn {
+  margin-left: 50px;
+  padding: 10px;
+  border: none;
+  background-color: green;
+  color: white;
+}
+
+/* Add styling for the total cost rectangle */
+.sidebar .total-cost {
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar .total-cost p {
+  margin: 0;
+}
+
+.sidebar .order-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
