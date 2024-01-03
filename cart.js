@@ -3,31 +3,30 @@ var productsDiv = document.querySelector(".Products");
 var sidebar = document.querySelector(".sidebar");
 
 var products = [
-    { Name: "iPhone 13", Cost: 500, Image: "../image/iphone13.jpg" },
-    { Name: "MacBook Pro", Cost: 1000, Image: "MackBookPro.jpg" },
+    { Name: "iPhone 13", Cost: 500, Image: "./image/iphone13.jpg" },
+    { Name: "MacBook Pro", Cost: 1000, Image: "./image/MackBookPro.jpg" },
     { Name: "Sony WH-1000XM4", Cost: 150, Image: "./image/SonyWH.jpg" },
     { Name: "Apple Watch Series 7", Cost: 200, Image: "./image/appleW7.jpg" },
     { Name: "Canon EOS R5", Cost: 800, Image: "./image/EOSR50.jpg" },
     { Name: "Nintendo Switch", Cost: 300, Image: "./image/Ninten.jpg" },
     { Name: "Kindle Paperwhite", Cost: 100, Image: "./image/kindle.jpg" },
     { Name: "Nike Air Force 1", Cost: 120, Image: "./image/Nike.jpeg" },
-    { Name: "Dyson V11", Cost: 600, Image: "./image/Dyson.jpg" },
+    { Name: "Dyson V11", Cost: 600, Image: "./image/Dyson.jpg"},
     { Name: "Lego Star Wars Millennium Falcon", Cost: 800, Image: "./image/falcon.jpg"},
-    { Name: "Samsung Galaxy S21", Cost: 799,image: "./image/SamsungS21.jpg"},
-    { Name: "Oculus Quest 2", Cost: 299,image: "./image/oculusquest2.jpg"},
+    { Name: "Samsung Galaxy S21", Cost: 799,Image: "./image/SamsungS21.jpg"},
+    { Name: "Oculus Quest 2", Cost: 299,Image: "./image/oculusquest2.jpg"},
     { Name: "Bose QuietComfort 35 II", Cost: 249, image: "./image/QuietComfort35.jpeg"},
-    { Name: "Fitbit Charge 5", Cost: 179.95, image: "./image/charge5.png"}, 
-    { Name: "GoPro Hero 10 Black", Cost: 499.99, image: "./image/Gopro.jpg"}, 
-    { Name: "Amazon Echo Dot (4th Gen)", Cost: 49.99,image: "./image/echo.jpg"},
-    { Name: "Microsoft Surface Pro 8", Cost: 1099.99,image: "./image/surface.jpg"}, 
-    { Name: "LG OLED C1 TV", Cost: 1799.99,image: ".image/LGoled.jgp"},
-    { Name: "Sonos Roam", Cost: 169,image:'./image/SonasRoam.webp'},
-    { Name: "Dell XPS 13", Cost: 999.99,image: './image/dell13.png'},
-    { Name: "Google Pixel 6", Cost: 699,image: './image/dell13.png'},
-    { Name: "Razer Blade 15", Cost: 1699.99,image: './image/RazerB.jpg'}, 
-    { Name: "Apple AirPods Pro", Cost: 249,image:'./image/airpods.png'},
-    { Name: "Samsung Galaxy Watch 4", Cost: 249.99,image: './image/SGW4.'},
-    { Name: "Logitech MX Master 3", Cost: 99.99,image: './image/LMM3.jpeg'}
+    { Name: "Fitbit Charge 5", Cost: 179.95,Image: "./image/charge5.png"}, 
+    { Name: "GoPro Hero 10 Black", Cost: 499.99,Image: "./image/Gopro.jpg"}, 
+    { Name: "Amazon Echo Dot (4th Gen)", Cost: 49.99,Image: "./image/echo.jpg"},
+    { Name: "Microsoft Surface Pro 8", Cost: 1099.99,Image: "./image/surface.jpg"}, 
+    { Name: "LG OLED C1 TV", Cost: 1799.99,Image:".\\image\\LGoled.jpg"},
+    { Name: "Sonos Roam", Cost: 169,Image:'.\\image\\SonosRoam.jpg'},
+    { Name: "Dell XPS 13", Cost: 999.99,Image: './image/dell13.png'},
+    { Name: "Razer Blade 15", Cost: 1699.99,Image: './image/RazerB.jpg'}, 
+    { Name: "Apple AirPods Pro", Cost: 249,Image:'./image/airpods.png'},
+    { Name: "Samsung Galaxy Watch 4", Cost: 249.99,Image: './image/SGW4.jpg'},
+    { Name: "Logitech MX Master 3", Cost: 99.99,Image: './image/LMM3.jpeg'}
 ];
 
 products.forEach(function (product) {
