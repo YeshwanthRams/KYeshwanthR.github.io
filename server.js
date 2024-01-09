@@ -1,35 +1,44 @@
-// Import MongoClient
-const MongoClient = require('mongodb').MongoClient;
+const express = require('express');
+const { MongoClient } = require('mongodb');
+const path = require('path');
+const app = express();
+const port = 3000;
 
-// Create a MongoClient object
-const uri = "mongodb://localhost:27017/";
-const client = new MongoClient(uri);
+const url = 'mongodb://localhost:27017';
+const dbName = 'MainData';
+const client = new MongoClient(url);
 
-// Connect to the database
-client.connect().then(() => {
-  // Get a handle to the database
-  const db = client.db("Mydata");
+// Middleware to serve static files from a directory named 'public'
+app.use(express.static(path.join(__dirname)));
 
-  // Get a handle to the collection
-  const col = db.collection("Product Data");
-
-  // Perform CRUD operations on the collection
-  col.find({}).toArray().then(docs => {
-    // Display the documents
-    docs.forEach(doc => {
-      console.log(doc);
-    });
-  }).catch(err => {
-    // Handle errors
-    console.error(err);
-  }).finally(() => {
-    // Close the connection
-    client.close();
-  });
-}).catch(err => {
-  // Handle errors
-  console.error(err);
-}).finally(() => {
-  // Close the connection
-  client.close();
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
+
+async function startServer() {
+  try {
+    await client.connect();
+    console.log('Connected to MongoDB');
+    
+    const db = client.db(dbName);
+    const collection = db.collection('Products');
+
+    app.get('/api/products', async (req, res) => {
+      try {
+        const products = await collection.find({}).toArray();
+        res.json(products);
+      } catch (error) {
+        res.status(500).json({ error: error.message });
+      }
+    });
+
+    app.listen(port, () => {
+      console.log(`Server running at http://localhost:${port}`);
+    });
+  } catch (error) {
+    console.error('Failed to connect to MongoDB', error);
+    process.exit(1);
+  }
+}
+
+startServer();

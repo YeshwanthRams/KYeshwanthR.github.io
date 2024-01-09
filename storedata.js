@@ -1,8 +1,9 @@
 const { MongoClient } = require('mongodb');
+const fs = require('fs');
 
 const uri = "mongodb://localhost:27017";
-const dbName = 'Mydata';
-const collectionName = 'Product Data';
+const dbName = 'MainData';
+const collectionName = 'Products';
 
 const data = JSON.parse(fs.readFileSync('data.json', 'utf8'));
 
